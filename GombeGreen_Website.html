@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gombe Green – Transforming Waste into Value</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ───────────────────────────────────────────────
+   RESET & VARIABLES
+─────────────────────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --forest:   #1A4731;
+  --mid:      #2D7A4F;
+  --leaf:     #4CAF77;
+  --lime:     #8DC63F;
+  --cream:    #F5F1E8;
+  --sand:     #E8E0CC;
+  --bark:     #3D2B1F;
+  --smoke:    #6B7280;
+  --white:    #FFFFFF;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Outfit', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--bark);
+  overflow-x: hidden;
+}
+
+/* ───────────────────────────────────────────────
+   NAV
+─────────────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  height: 68px;
+  background: rgba(26,71,49,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(141,198,63,0.2);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nav-glyph {
+  width: 32px; height: 32px;
+}
+
+.nav-wordmark {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.02em;
+}
+
+.nav-wordmark span {
+  color: var(--lime);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.72);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--lime); }
+
+.nav-cta {
+  background: var(--lime) !important;
+  color: var(--forest) !important;
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-weight: 600 !important;
+  transition: background 0.2s, transform 0.15s !important;
+}
+
+.nav-cta:hover {
+  background: #a3d94f !important;
+  transform: translateY(-1px);
+}
+
+/* ───────────────────────────────────────────────
+   HERO
+─────────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  background: var(--forest);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 48px 80px;
+}
+
+/* organic blob decorations */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -120px; right: -120px;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(45,122,79,0.5) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: -80px;
+  width: 420px; height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(141,198,63,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* animated floating rings */
+.hero-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(141,198,63,0.15);
+  pointer-events: none;
+  animation: pulse-ring 6s ease-in-out infinite;
+}
+
+.hero-ring:nth-child(1) { width: 500px; height: 500px; top: 10%; right: 5%; animation-delay: 0s; }
+.hero-ring:nth-child(2) { width: 320px; height: 320px; top: 20%; right: 12%; animation-delay: 2s; }
+.hero-ring:nth-child(3) { width: 180px; height: 180px; top: 30%; right: 22%; animation-delay: 4s; }
+
+@keyframes pulse-ring {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.04); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(141,198,63,0.15);
+  border: 1px solid rgba(141,198,63,0.35);
+  border-radius: 100px;
+  padding: 6px 16px;
+  margin-bottom: 28px;
+  animation: fade-up 0.8s ease forwards;
+}
+
+.hero-eyebrow-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--lime);
+  animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%,100% { opacity: 1; } 50% { opacity: 0.3; }
+}
+
+.hero-eyebrow span {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--lime);
+  font-weight: 600;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 7vw, 96px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+  animation: fade-up 0.8s 0.1s ease both;
+}
+
+.hero-title em {
+  color: var(--lime);
+  font-style: italic;
+}
+
+.hero-subtitle {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.5vw, 28px);
+  color: rgba(255,255,255,0.6);
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 32px;
+  animation: fade-up 0.8s 0.2s ease both;
+}
+
+.hero-desc {
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.7);
+  max-width: 560px;
+  margin-bottom: 48px;
+  animation: fade-up 0.8s 0.3s ease both;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: fade-up 0.8s 0.4s ease both;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--lime);
+  color: var(--forest);
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background: #a3d94f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(141,198,63,0.3);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  color: var(--white);
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover {
+  border-color: var(--lime);
+  color: var(--lime);
+  transform: translateY(-2px);
+}
+
+/* hero stats strip */
+.hero-stats {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(0,0,0,0.25);
+  border-top: 1px solid rgba(141,198,63,0.2);
+  display: flex;
+  z-index: 2;
+  animation: fade-up 0.8s 0.5s ease both;
+}
+
+.hero-stat {
+  flex: 1;
+  padding: 22px 32px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+}
+
+.hero-stat:last-child { border-right: none; }
+
+.hero-stat-val {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--lime);
+  display: block;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.hero-stat-lbl {
+  font-size: 10px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ───────────────────────────────────────────────
+   SECTION COMMONS
+─────────────────────────────────────────────── */
+section { padding: 96px 48px; }
+
+.section-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 4vw, 54px);
+  font-weight: 700;
+  color: var(--forest);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.section-title em { color: var(--mid); font-style: italic; }
+
+.section-lead {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--smoke);
+  max-width: 600px;
+}
+
+/* ───────────────────────────────────────────────
+   ABOUT / OPPORTUNITY
+─────────────────────────────────────────────── */
+#about {
+  background: var(--white);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-visual {
+  position: relative;
+}
+
+.about-card-stack {
+  position: relative;
+  height: 420px;
+}
+
+.about-card {
+  position: absolute;
+  border-radius: 16px;
+  padding: 28px 32px;
+  box-shadow: 0 16px 48px rgba(26,71,49,0.12);
+}
+
+.about-card-1 {
+  background: var(--forest);
+  width: 300px;
+  top: 0; left: 0;
+  z-index: 1;
+  transform: rotate(-3deg);
+}
+
+.about-card-2 {
+  background: var(--lime);
+  width: 280px;
+  top: 60px; left: 80px;
+  z-index: 2;
+  transform: rotate(1.5deg);
+}
+
+.about-card-3 {
+  background: var(--cream);
+  border: 2px solid var(--sand);
+  width: 320px;
+  top: 140px; left: 30px;
+  z-index: 3;
+  transform: rotate(-1deg);
+}
+
+.about-card-label {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.about-card-1 .about-card-label { color: var(--lime); }
+.about-card-2 .about-card-label { color: var(--forest); }
+.about-card-3 .about-card-label { color: var(--mid); }
+
+.about-card-val {
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.about-card-1 .about-card-val { color: var(--white); }
+.about-card-2 .about-card-val { color: var(--forest); }
+.about-card-3 .about-card-val { color: var(--forest); }
+
+.about-card-sub {
+  font-size: 12px;
+  margin-top: 6px;
+  font-weight: 400;
+}
+
+.about-card-1 .about-card-sub { color: rgba(255,255,255,0.6); }
+.about-card-2 .about-card-sub { color: rgba(26,71,49,0.7); }
+.about-card-3 .about-card-sub { color: var(--smoke); }
+
+.about-pillars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 36px;
+}
+
+.pillar {
+  background: var(--cream);
+  border-radius: 10px;
+  padding: 18px 20px;
+  border-left: 3px solid var(--lime);
+}
+
+.pillar-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--forest);
+  margin-bottom: 4px;
+}
+
+.pillar-desc {
+  font-size: 12px;
+  color: var(--smoke);
+  line-height: 1.5;
+}
+
+/* ───────────────────────────────────────────────
+   HOW IT WORKS
+─────────────────────────────────────────────── */
+#how {
+  background: var(--forest);
+  position: relative;
+  overflow: hidden;
+}
+
+#how::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 700px; height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(45,122,79,0.3) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.how-header {
+  text-align: center;
+  margin-bottom: 64px;
+  position: relative;
+  z-index: 1;
+}
+
+.how-header .section-eyebrow { color: var(--lime); }
+.how-header .section-title { color: var(--white); }
+.how-header .section-lead { color: rgba(255,255,255,0.6); margin: 0 auto; }
+
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.how-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(141,198,63,0.2);
+  border-radius: 14px;
+  padding: 32px 28px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.how-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--lime);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+
+.how-card:hover {
+  background: rgba(255,255,255,0.09);
+  border-color: rgba(141,198,63,0.5);
+  transform: translateY(-4px);
+}
+
+.how-card:hover::before { transform: scaleX(1); }
+
+.how-num {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 700;
+  color: rgba(141,198,63,0.2);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.how-icon {
+  font-size: 28px;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.how-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.how-desc {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.6);
+}
+
+/* ───────────────────────────────────────────────
+   IMPACT
+─────────────────────────────────────────────── */
+#impact {
+  background: var(--cream);
+}
+
+.impact-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.impact-header .section-lead { margin: 0 auto; }
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.impact-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 36px 28px;
+  text-align: center;
+  box-shadow: 0 4px 24px rgba(26,71,49,0.07);
+  border-bottom: 4px solid transparent;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.impact-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--lime);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.impact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(26,71,49,0.14);
+}
+
+.impact-card:hover::after { transform: scaleX(1); }
+
+.impact-num {
+  font-family: var(--font-display);
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--forest);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.impact-unit {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--lime);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.impact-label {
+  font-size: 13px;
+  color: var(--smoke);
+  line-height: 1.5;
+}
+
+/* ───────────────────────────────────────────────
+   PHASES
+─────────────────────────────────────────────── */
+#phases {
+  background: var(--white);
+}
+
+.phases-header { margin-bottom: 56px; }
+
+.phases-timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+.phases-timeline::before {
+  content: '';
+  position: absolute;
+  top: 44px; left: 16.66%; right: 16.66%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--lime), var(--mid));
+  z-index: 0;
+}
+
+.phase-item {
+  position: relative;
+  z-index: 1;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.phase-dot {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  position: relative;
+}
+
+.phase-dot-1 { background: var(--forest); color: var(--lime); box-shadow: 0 0 0 6px rgba(26,71,49,0.15); }
+.phase-dot-2 { background: var(--mid); color: var(--white); box-shadow: 0 0 0 6px rgba(45,122,79,0.15); }
+.phase-dot-3 { background: var(--lime); color: var(--forest); box-shadow: 0 0 0 6px rgba(141,198,63,0.2); }
+
+.phase-card {
+  background: var(--cream);
+  border-radius: 14px;
+  padding: 28px 24px;
+  text-align: left;
+  transition: all 0.3s;
+}
+
+.phase-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(26,71,49,0.1);
+}
+
+.phase-tag {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--mid);
+  margin-bottom: 8px;
+}
+
+.phase-name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--forest);
+  margin-bottom: 6px;
+}
+
+.phase-meta {
+  font-size: 12px;
+  color: var(--smoke);
+  margin-bottom: 14px;
+}
+
+.phase-price {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--forest);
+  margin-bottom: 12px;
+}
+
+.phase-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.phase-points li {
+  font-size: 12.5px;
+  color: var(--smoke);
+  line-height: 1.55;
+  padding-left: 14px;
+  position: relative;
+}
+
+.phase-points li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--lime);
+  font-size: 11px;
+}
+
+/* ───────────────────────────────────────────────
+   PARTNERS
+─────────────────────────────────────────────── */
+#partners {
+  background: var(--forest);
+  position: relative;
+  overflow: hidden;
+}
+
+#partners::after {
+  content: '';
+  position: absolute;
+  bottom: -150px; left: -150px;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(141,198,63,0.1) 0%, transparent 70%);
+}
+
+.partners-header {
+  text-align: center;
+  margin-bottom: 56px;
+  position: relative; z-index: 1;
+}
+
+.partners-header .section-eyebrow { color: var(--lime); }
+.partners-header .section-title { color: var(--white); }
+.partners-header .section-lead { color: rgba(255,255,255,0.6); margin: 0 auto; }
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  position: relative; z-index: 1;
+}
+
+.partner-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(141,198,63,0.2);
+  border-radius: 14px;
+  padding: 32px 28px;
+  transition: all 0.3s;
+}
+
+.partner-card:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-4px);
+}
+
+.partner-icon {
+  font-size: 32px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.partner-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.partner-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.partner-items li {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.partner-items li::before {
+  content: '·';
+  position: absolute;
+  left: 4px;
+  color: var(--lime);
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+/* ───────────────────────────────────────────────
+   CONTACT
+─────────────────────────────────────────────── */
+#contact {
+  background: var(--cream);
+}
+
+.contact-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contact-info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contact-item-icon {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  background: var(--forest);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.contact-item-label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--smoke);
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.contact-item-val {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--forest);
+}
+
+.contact-item-val a {
+  color: var(--forest);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-item-val a:hover { color: var(--mid); }
+
+.contact-form {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 40px 36px;
+  box-shadow: 0 8px 32px rgba(26,71,49,0.08);
+}
+
+.form-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--forest);
+  margin-bottom: 6px;
+}
+
+.form-sub {
+  font-size: 13.5px;
+  color: var(--smoke);
+  margin-bottom: 28px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--forest);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--sand);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--bark);
+  background: var(--cream);
+  transition: border-color 0.2s;
+  outline: none;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--mid);
+  background: var(--white);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.form-submit {
+  width: 100%;
+  padding: 14px;
+  background: var(--forest);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 6px;
+}
+
+.form-submit:hover {
+  background: var(--mid);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(26,71,49,0.2);
+}
+
+/* ───────────────────────────────────────────────
+   FOOTER
+─────────────────────────────────────────────── */
+footer {
+  background: #0F2D1E;
+  padding: 48px 48px 32px;
+  border-top: 1px solid rgba(141,198,63,0.15);
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-brand-name {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.footer-brand-name span { color: var(--lime); }
+
+.footer-brand-tag {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.1em;
+}
+
+.footer-tagline {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 12px;
+  font-style: italic;
+  max-width: 240px;
+  line-height: 1.6;
+}
+
+.footer-links-group h4 {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--lime);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.footer-links-group ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-links-group a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links-group a:hover { color: var(--lime); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+}
+
+.footer-powered {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-powered-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--lime);
+}
+
+.footer-powered span {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ───────────────────────────────────────────────
+   SCROLL REVEAL
+─────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ───────────────────────────────────────────────
+   RESPONSIVE
+─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+
+  section { padding: 64px 24px; }
+  .hero { padding: 100px 24px 80px; }
+
+  #about { grid-template-columns: 1fr; gap: 40px; }
+  .about-card-stack { height: 280px; }
+  .about-card-1 { width: 240px; }
+  .about-card-2 { width: 220px; top: 40px; left: 50px; }
+  .about-card-3 { width: 260px; top: 100px; left: 20px; }
+
+  .how-grid { grid-template-columns: 1fr; }
+  .impact-grid { grid-template-columns: repeat(2, 1fr); }
+  .phases-timeline { grid-template-columns: 1fr; }
+  .phases-timeline::before { display: none; }
+  .partners-grid { grid-template-columns: 1fr; }
+  .contact-wrap { grid-template-columns: 1fr; gap: 40px; }
+
+  .hero-stats { position: static; display: grid; grid-template-columns: repeat(3, 1fr); }
+  .hero-stat { border-bottom: 1px solid rgba(255,255,255,0.08); }
+
+  .footer-top { flex-direction: column; gap: 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg class="nav-glyph" viewBox="0 0 32 32" fill="none">
+      <circle cx="16" cy="16" r="15" stroke="rgba(141,198,63,0.4)" stroke-width="1"/>
+      <path d="M16 6C10 6 6 10 6 16s4 10 10 10c2.5 0 4.8-1 6.4-2.6" stroke="#8DC63F" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <path d="M22 10l.4 13.4-5.5-3" stroke="#8DC63F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <circle cx="16" cy="16" r="2.5" fill="#8DC63F" opacity="0.8"/>
+    </svg>
+    <span class="nav-wordmark">Gombe<span> Green</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#phases">Roadmap</a></li>
+    <li><a href="#partners">Partners</a></li>
+    <li><a href="#contact" class="nav-cta">Get Involved</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-ring"></div>
+  <div class="hero-ring"></div>
+  <div class="hero-ring"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-dot"></div>
+      <span>Gombe State, Nigeria · Powered by REMASOL</span>
+    </div>
+    <h1 class="hero-title">Turning Waste<br>into <em>Value.</em></h1>
+    <p class="hero-subtitle">A digital-enabled community recycling programme</p>
+    <p class="hero-desc">Gombe Green transforms solid waste into economic opportunity, community income, and measurable climate impact — laying the foundation for an integrated Recyclables Trading Exchange across Nigeria and Africa.</p>
+    <div class="hero-actions">
+      <a href="#about" class="btn-primary">
+        Explore the Programme
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#contact" class="btn-outline">Get Involved</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="hero-stat"><span class="hero-stat-val">160+</span><span class="hero-stat-lbl">Tonnes Diverted</span></div>
+    <div class="hero-stat"><span class="hero-stat-val">100+</span><span class="hero-stat-lbl">Jobs Created</span></div>
+    <div class="hero-stat"><span class="hero-stat-val">2,000+</span><span class="hero-stat-lbl">Households Engaged</span></div>
+    <div class="hero-stat"><span class="hero-stat-val">18+</span><span class="hero-stat-lbl">Tonnes CO₂e Offset</span></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-visual reveal">
+    <div class="about-card-stack">
+      <div class="about-card about-card-1">
+        <div class="about-card-label">Carbon Offset Target</div>
+        <div class="about-card-val">18+</div>
+        <div class="about-card-sub">Tonnes CO₂e logged in Year 1</div>
+      </div>
+      <div class="about-card about-card-2">
+        <div class="about-card-label">EcoPoints Reward Pool</div>
+        <div class="about-card-val">₦2M</div>
+        <div class="about-card-sub">Distributed to communities</div>
+      </div>
+      <div class="about-card about-card-3">
+        <div class="about-card-label">Waste Diverted</div>
+        <div class="about-card-val">160+ Tonnes</div>
+        <div class="about-card-sub">First 12 months · Gombe State</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reveal">
+    <p class="section-eyebrow">About Gombe Green</p>
+    <h2 class="section-title">More than recycling.<br><em>A new economy.</em></h2>
+    <p class="section-lead">We are building the infrastructure, community systems, and digital technology to transform how Gombe State manages waste — creating livelihoods, reducing emissions, and positioning the region as a leader in climate-smart development.</p>
+
+    <div class="about-pillars">
+      <div class="pillar">
+        <div class="pillar-title">♻ Waste Recovery</div>
+        <div class="pillar-desc">Community sorting hubs process plastics, organics, and metals for resale and composting.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-title">📱 REMASOL Platform</div>
+        <div class="pillar-desc">Smart digital platform managing logistics, EcoPoints rewards, and real-time climate tracking.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-title">👥 Youth Employment</div>
+        <div class="pillar-desc">100+ wastepreneurs trained and employed in collection, sorting, and data recording.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-title">🌍 Carbon Markets</div>
+        <div class="pillar-desc">Verified carbon offset data opens access to climate finance and Net-Zero markets.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="how-header reveal">
+    <p class="section-eyebrow">The Programme</p>
+    <h2 class="section-title">How It <em>Works</em></h2>
+    <p class="section-lead">Six integrated components working together to create a self-sustaining waste economy.</p>
+  </div>
+
+  <div class="how-grid">
+    <div class="how-card reveal">
+      <div class="how-num">01</div>
+      <span class="how-icon">🎓</span>
+      <div class="how-title">Train Wastepreneurs</div>
+      <div class="how-desc">Local youth are trained in waste collection, sorting, value recovery, and carbon data recording using the REMASOL platform — creating skilled, employed community members.</div>
+    </div>
+    <div class="how-card reveal">
+      <div class="how-num">02</div>
+      <span class="how-icon">📲</span>
+      <div class="how-title">Deploy REMASOL</div>
+      <div class="how-desc">Our smart waste platform manages route logistics, distributes digital EcoPoints rewards, and tracks recyclables and climate impact data in real time.</div>
+    </div>
+    <div class="how-card reveal">
+      <div class="how-num">03</div>
+      <span class="how-icon">🏭</span>
+      <div class="how-title">Establish Sorting Hubs</div>
+      <div class="how-desc">Community sorting hubs process plastics, organics, and metals for resale, composting, or eco-manufacturing — creating local circular economy value chains.</div>
+    </div>
+    <div class="how-card reveal">
+      <div class="how-num">04</div>
+      <span class="how-icon">🎁</span>
+      <div class="how-title">Incentivize Households</div>
+      <div class="how-desc">Community members earn EcoPoints for segregated waste, redeemable for food, airtime, or education support — driving sustained household participation.</div>
+    </div>
+    <div class="how-card reveal">
+      <div class="how-num">05</div>
+      <span class="how-icon">🏫</span>
+      <div class="how-title">Mobilize Schools</div>
+      <div class="how-desc">Youth-led environmental stewardship through SDG-focused Green Clubs, inter-school competitions, and community education campaigns.</div>
+    </div>
+    <div class="how-card reveal">
+      <div class="how-num">06</div>
+      <span class="how-icon">🏪</span>
+      <div class="how-title">Federal Marketplace</div>
+      <div class="how-desc">A digital exchange enabling stakeholders to register waste reduction activities — unlocking green income, carbon offset trading, and Net-Zero participation for businesses and communities.</div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section id="impact">
+  <div class="impact-header reveal">
+    <p class="section-eyebrow">Projected Impact</p>
+    <h2 class="section-title">Targets for <em>Year One</em></h2>
+    <p class="section-lead">Measurable, evidence-based outcomes across economic, environmental, and social dimensions in Gombe State.</p>
+  </div>
+
+  <div class="impact-grid">
+    <div class="impact-card reveal">
+      <div class="impact-num">160+</div>
+      <div class="impact-unit">Tonnes</div>
+      <div class="impact-label">Solid waste diverted from landfill in first 12 months</div>
+    </div>
+    <div class="impact-card reveal">
+      <div class="impact-num">100+</div>
+      <div class="impact-unit">Jobs</div>
+      <div class="impact-label">Youth and community members trained and employed</div>
+    </div>
+    <div class="impact-card reveal">
+      <div class="impact-num">2,000+</div>
+      <div class="impact-unit">Households</div>
+      <div class="impact-label">Households actively engaged in the programme</div>
+    </div>
+    <div class="impact-card reveal">
+      <div class="impact-num">₦2M</div>
+      <div class="impact-unit">EcoPoints</div>
+      <div class="impact-label">Digital rewards distributed to participating community members</div>
+    </div>
+    <div class="impact-card reveal">
+      <div class="impact-num">5+</div>
+      <div class="impact-unit">Green Clubs</div>
+      <div class="impact-label">Schools and community clubs activated for environmental stewardship</div>
+    </div>
+    <div class="impact-card reveal">
+      <div class="impact-num">18+</div>
+      <div class="impact-unit">Tonnes CO₂e</div>
+      <div class="impact-label">Carbon offset data logged and verified for climate finance access</div>
+    </div>
+  </div>
+</section>
+
+<!-- PHASES -->
+<section id="phases">
+  <div class="phases-header reveal">
+    <p class="section-eyebrow">Engagement Structure</p>
+    <h2 class="section-title">Three-Phase <em>Roadmap</em></h2>
+    <p class="section-lead">A structured, phased approach from research to full market launch — building a bankable, scalable enterprise.</p>
+  </div>
+
+  <div class="phases-timeline">
+    <div class="phase-item reveal">
+      <div class="phase-dot phase-dot-1">1</div>
+      <div class="phase-card">
+        <div class="phase-tag">Phase 1 · Active</div>
+        <div class="phase-name">Pioneering</div>
+        <div class="phase-meta">15 Days &nbsp;·&nbsp; $10,000</div>
+        <div class="phase-price">Pathfinder Document</div>
+        <ul class="phase-points">
+          <li>Research and ideation around innovative waste solutions</li>
+          <li>Distil critical insights into a feasible, viable business model</li>
+          <li>Map the critical path for integrated waste management development</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="phase-item reveal">
+      <div class="phase-dot phase-dot-2">2</div>
+      <div class="phase-card">
+        <div class="phase-tag">Phase 2 · Upcoming</div>
+        <div class="phase-name">Conceptualisation</div>
+        <div class="phase-meta">15 Days &nbsp;·&nbsp; $10,000</div>
+        <div class="phase-price">Concept Document</div>
+        <ul class="phase-points">
+          <li>Develop the Ameco platform concept across 10 critical business substrates</li>
+          <li>Integrate REMASOL technology into the business model</li>
+          <li>Identify and approach suitable funding entities and partners</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="phase-item reveal">
+      <div class="phase-dot phase-dot-3">3</div>
+      <div class="phase-card">
+        <div class="phase-tag">Phase 3 · Future</div>
+        <div class="phase-name">Piloting & Launch</div>
+        <div class="phase-meta">Timeline TBC &nbsp;·&nbsp; Fee TBC</div>
+        <div class="phase-price">Year-0 Business Operation</div>
+        <ul class="phase-points">
+          <li>Live pilots at Government HQ, CBD, landfill, and residential areas</li>
+          <li>REMASOL ERP System rollout and route logistics activation</li>
+          <li>Compile evidence-based Year-0 operation — a bankable, fungible entity</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section id="partners">
+  <div class="partners-header reveal">
+    <p class="section-eyebrow">Collaborate With Us</p>
+    <h2 class="section-title">Partnership &amp; <em>Support Needs</em></h2>
+    <p class="section-lead">We are actively seeking aligned partners across three categories to bring Gombe Green to life.</p>
+  </div>
+
+  <div class="partners-grid">
+    <div class="partner-card reveal">
+      <span class="partner-icon">🏛</span>
+      <div class="partner-name">Gombe State &amp; Local Government</div>
+      <ul class="partner-items">
+        <li>Land access for community sorting hubs and pilot sites</li>
+        <li>Regulatory alignment and policy framework support</li>
+        <li>Scale-up endorsement and government-level partnership</li>
+      </ul>
+    </div>
+    <div class="partner-card reveal">
+      <span class="partner-icon">🌐</span>
+      <div class="partner-name">Donors &amp; NGOs</div>
+      <ul class="partner-items">
+        <li>Infrastructure investment and training sponsorship</li>
+        <li>Climate finance pilot programme funding</li>
+        <li>SDG-aligned grant and impact investment</li>
+      </ul>
+    </div>
+    <div class="partner-card reveal">
+      <span class="partner-icon">🏢</span>
+      <div class="partner-name">Private Sector</div>
+      <ul class="partner-items">
+        <li>Carbon offset buyers for verified GHG reductions</li>
+        <li>Off-takers for sorted recyclable materials</li>
+        <li>Green product developers and eco-manufacturers</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-wrap">
+    <div class="reveal">
+      <p class="section-eyebrow">Reach Out</p>
+      <h2 class="section-title">Let's Build This <em>Together</em></h2>
+      <p class="section-lead">Whether you are an investor, a government official, a donor, or a community partner — we want to hear from you.</p>
+
+      <div class="contact-info-grid">
+        <div class="contact-item">
+          <div class="contact-item-icon">✉️</div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-val"><a href="mailto:gombegreeninnitive@gmail.com">gombegreeninnitive@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📞</div>
+          <div>
+            <div class="contact-item-label">Phone</div>
+            <div class="contact-item-val"><a href="tel:+2347040550540">+234 704 055 0540</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div>
+            <div class="contact-item-label">Location</div>
+            <div class="contact-item-val">Gombe State, Nigeria</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">⚡</div>
+          <div>
+            <div class="contact-item-label">Platform</div>
+            <div class="contact-item-val">Powered by REMASOL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form reveal">
+      <div class="form-title">Send a Message</div>
+      <div class="form-sub">We respond to all enquiries within 48 hours.</div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="John">
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Doe">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="you@organisation.com">
+      </div>
+      <div class="form-group">
+        <label>Organisation</label>
+        <input type="text" placeholder="Your organisation or company">
+      </div>
+      <div class="form-group">
+        <label>Interest Area</label>
+        <select>
+          <option value="">Select your interest...</option>
+          <option>Investment / Funding</option>
+          <option>Government Partnership</option>
+          <option>Carbon Offset Purchasing</option>
+          <option>NGO / Donor Collaboration</option>
+          <option>Community Participation</option>
+          <option>Media / Press Enquiry</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea rows="4" placeholder="Tell us how you would like to get involved..."></textarea>
+      </div>
+      <button class="form-submit" onclick="handleSubmit(this)">Send Message →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">Gombe<span> Green</span></div>
+      <div class="footer-brand-tag">By Greendust &amp; Ameco · Gombe State, Nigeria</div>
+      <div class="footer-tagline">Transforming waste into value — building Africa's climate-smart economies.</div>
+    </div>
+    <div class="footer-links-group">
+      <h4>Programme</h4>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#impact">Impact Targets</a></li>
+        <li><a href="#phases">Roadmap</a></li>
+      </ul>
+    </div>
+    <div class="footer-links-group">
+      <h4>Get Involved</h4>
+      <ul>
+        <li><a href="#partners">Partnership Needs</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="mailto:gombegreeninnitive@gmail.com">Email Us</a></li>
+        <li><a href="tel:+2347040550540">+234 704 055 0540</a></li>
+      </ul>
+    </div>
+    <div class="footer-links-group">
+      <h4>Technology</h4>
+      <ul>
+        <li><a href="#">REMASOL Platform</a></li>
+        <li><a href="#">EcoPoints System</a></li>
+        <li><a href="#">Carbon Tracking</a></li>
+        <li><a href="#">Recyclables Exchange</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Gombe Green Initiative. All rights reserved. A Greendust &amp; Ameco Programme.</div>
+    <div class="footer-powered">
+      <div class="footer-powered-dot"></div>
+      <span>Powered by REMASOL Smart Waste Platform</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Smooth nav active state
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(sec => {
+    if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
+  });
+  navLinks.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + current
+      ? 'var(--lime)' : '';
+  });
+});
+
+// Form submit handler
+function handleSubmit(btn) {
+  btn.textContent = 'Message Sent ✓';
+  btn.style.background = 'var(--mid)';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.textContent = 'Send Message →';
+    btn.style.background = '';
+    btn.disabled = false;
+  }, 4000);
+}
+</script>
+
+</body>
+</html>
